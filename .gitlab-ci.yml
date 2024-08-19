@@ -1,0 +1,71 @@
+image: node:20-buster
+
+stages:
+  - lint
+  - build
+  - test
+  - deploy
+
+workflow:
+  rules:
+    - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+    - if: $CI_COMMIT_BRANCH == 'staging'
+
+default:
+  cache:
+    key:
+      files:
+        - ./server/package-lock.json
+        - ./client/package-lock.json
+    paths:
+      - ./server/.npm/
+      - ./client/.npm/
+  before_script:
+     - cd server && npm ci --cache .npm --prefer-offline && cd ../client && npm ci --cache .npm --prefer-offline && cd ..
+
+lint-server:
+  stage: lint 
+  script:
+    - cd server && ./node_modules/eslint/bin/eslint.js --ext js,mjs,cjs . 
+  allow_failure: false
+
+lint-client:
+  stage: lint 
+  script:
+    - cd client && ./node_modules/eslint/bin/eslint.js --ext js,jsx,mjs,cjs .
+  allow_failure: false
+
+build-app:
+  stage: build
+  script:
+    - cd client && npm run build
+  artifacts:
+    expire_in: 1 days
+    when: on_success
+    paths:
+      - client/build
+      - server
+
+server-test:
+  stage: test
+  script:
+    - npm run test
+  allow_failure: false
+
+deploy-app:
+  stage: deploy
+  image:  mcr.microsoft.com/azure-cli
+  dependencies:
+    - build-app
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "main"'
+    - if: '$CI_COMMIT_BRANCH == "staging"'
+  before_script:
+    - apk update
+    - apk add zip
+    - "az login --allow-no-subscriptions --service-principal -u $AZ_SP_ID -p $AZ_SP_SECRET --tenant $AZ_TENANT"
+  script:
+    - zip -r deploy.zip client/build server ./package.json
+    - "az webapp config appsettings set --resource-group $RESOURCE_GROUP_NAME --name $APP_NAME --settings WEBSITE_RUN_FROM_PACKAGE='1' CONNECTION_STRING=$CONNECTION_STRING GOOGLE_CLIENT_ID=$GOOGLE_CLIENT_ID SECRET=$SECRET REACT_APP_GOOGLE_CLIENT_ID=$REACT_APP_GOOGLE_CLIENT_ID"
+    - "az webapp deployment source config-zip --resource-group $RESOURCE_GROUP_NAME --name $APP_NAME --src deploy.zip"
