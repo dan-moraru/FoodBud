@@ -1,4 +1,4 @@
-# NutritionCalculator
+# FoodBud
 
 ## [FoodBud](https://nutritionbud.azurewebsites.net/)
 
