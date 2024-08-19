@@ -1,0 +1,24 @@
+{
+    "name": "package.json",
+    "version": "1.0.0",
+    "description": "Authors:",
+    "main": "index.js",
+    "scripts": {
+        "start": "cd server && npm run start",
+        "build-start" : "cd client && npm install && npm run build && cd ../server && npm install && npm run start",
+        "build": "cd client && npm install && npm run build && cd ../server && npm install",
+        "test": "cd server && npm run test",
+        "dev": "cd server && npm run dev",
+        "build-and-start": "npm run build && npm run start"
+    },
+    "authors": [
+        "Dan Moraru",
+        "Oleks",
+        "Amir Mojtahedi",
+        "Samir"
+    ],
+    "license": "ISC",
+    "dependencies": {
+        "supertest": "^6.3.4"
+    }
+}

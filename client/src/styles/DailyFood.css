@@ -1,0 +1,41 @@
+.daily-food-page{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.daily-food-ticket{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #EBE6EC;
+    width: 50%;
+    border-radius: 15px;
+    margin: 2%;
+}
+
+.remove-daily-food-btn{
+    background-color: #ff4040;
+    margin: 2%;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 600;
+    transition-duration: 0.4s;
+}
+
+#daily-food-status {
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .daily-food-ticket {
+        width: 90%;
+    }
+}

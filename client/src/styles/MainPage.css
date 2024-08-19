@@ -1,0 +1,329 @@
+#main-page {
+    display: flex;
+    padding: 2%;
+    justify-content: space-evenly;
+}
+
+.section-search {
+    background-color: #EBE6EC;
+    border-radius: 15px;
+    width: 50%;
+    margin: 3%;
+    padding: 3%;
+    display: flex;
+    overflow-y: auto;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section-stats {
+    background-color: #EBE6EC;
+    border-radius: 15px;
+    width: 50%;
+    margin: 3%;
+    padding: 3%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#food-list {
+    height: 100vh;
+    width: 80%;
+    max-width: 50vw;
+    display: flex;
+    flex-direction: column;
+    padding: 3%;
+    align-items: center;
+}
+
+@media only screen and (max-width: 700px) {
+    #main-page {
+        flex-direction: column;
+    }
+
+    .section-search {
+        height: 50vh;
+        width: auto;
+        margin: 3%;
+        padding: 3%;
+        display: flex;
+        overflow-y: auto;
+        scrollbar-width: none;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .section-stats {
+        min-height: 50vh;
+        width: auto;
+        height: fit-content;
+        margin: 3%;
+        margin-top: 0;
+        padding: 3%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #food-list {
+        height: fit-content;
+        width: 80%;
+        max-width: 50vw;
+        display: flex;
+        flex-direction: column;
+        padding: 3%;
+        align-items: center;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .section-search, .section-stats {
+        background-color: #707070;
+    }
+}
+ 
+#food-list-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.food-item {
+    background-image: linear-gradient(rgb(224, 218, 182), rgb(221, 207, 126));
+    border-radius: 10px;
+    margin: 5px 10px;
+    padding: 1px 10px 10px;
+    width: 100%;
+    height: fit-content;
+}
+
+.food-item > h3 {
+    text-align: left;
+    margin: 0px;
+    margin-top: 5px;
+}
+
+.cart-basic-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin: 0px;
+}
+
+.cart-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0px;
+}
+
+.cart-buttons > button {
+    border: none;
+    background-color: transparent;
+    font-size: medium;
+    font-weight: bold;
+    border-bottom: 1px solid black;
+    color: black;
+}
+
+.cart-buttons > button:hover {
+    cursor: pointer;
+    background-color: rgb(172, 161, 103);
+}
+
+.food-button {
+  background-color: #555;
+  border: none;
+  border-radius: 5px;
+  width: 50%;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 600;
+  transition-duration: 0.4s;
+}
+
+.food-button:hover {
+    background-color: #646464;
+    box-shadow: 0 12px 16px 0 #0000003d, 0 17px 50px 0 #00000030;
+}
+
+.back-total {
+    margin: 0px;
+    width: 100%;
+    background-color: white;
+    transition-duration: 0.4s;
+    border: 1px solid white;
+}
+
+.back-total:hover {
+    cursor: pointer;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.food-ticket {
+    border: 3px solid black;
+    width: 50%;
+    margin: 2%;
+    background-color: white;
+
+    @media (max-width: 1430px) {
+        width: 100%;
+        margin: 2%;
+    }
+}
+
+.food-ticket h1{
+    text-align: center;
+}
+
+.food-ticket > * {
+    margin: 0px 5px 0px 5px;
+    font-family: 'Helvetica Neue', sans-serif;
+}
+
+.food-ticket > button {
+    margin: 0px;
+}
+
+.food-ticket > p {
+    font-family: 'Helvetica Neue', sans-serif;
+}
+
+h1 {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-weight: 800;
+    font-size: 36px;
+    width: 100%;
+    margin: 0px 5px 0px 5px;
+}
+
+hr {
+    margin: 0px 5px 0px 5px;
+}
+
+#viewing-text {
+    margin: 0px 5px 0px 5px;
+    font-family: 'Helvetica Neue', sans-serif;
+}
+
+.bold-line {
+    height: 13px;
+    background-color: black;
+    margin: 0px 5px 0px 5px;
+    border: 1px solid black;
+}
+
+.med-line {
+    height: 5px;
+    background-color: black;
+    margin: 0px 5px 0px 5px;
+    border: 1px solid black;
+}
+
+@media (prefers-color-scheme: dark) {
+    .food-ticket {
+        border: 3px solid hsl(231, 47%, 20%);
+        background-color: #101531;
+        color: #dbdbdb;
+    }
+    .bold-line, .med-line {
+        border: 1px solid #c0c0c0;
+        background-color: #c0c0c0;
+    }
+}
+
+.small-line {
+    margin: 0px 5px 0px 20px;
+    font-family: 'Helvetica Neue', sans-serif;
+}
+
+.serving-text {
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 5px 3px 5px;
+}
+
+.serving-text > p {
+    margin: 1px;
+    font-weight: bold;
+    font-size: 18px;
+    font-family: 'Helvetica Neue', sans-serif;
+}
+
+.small-text {
+    font-size: 14px;
+    margin: 0px;
+    font-family: 'Helvetica Neue', sans-serif;
+}
+
+.calories-section {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.calories-section > div {
+    margin: 0px;
+}
+
+.calories-text {
+    margin: 0px;
+    font-weight: 1000;
+    font-size: 28px;
+}
+
+.calories-num {
+    margin: 0px;
+    font-weight: 1000;
+    font-size: 35px;
+    text-align: end;
+    align-self: end;
+}
+
+.daily-value {
+    text-align: end;
+    font-size: 14px;
+    margin: 3px 5px 3px 5px;
+}
+
+.daily-value-par {
+    font-size: 12px;
+    margin: 3px 5px 3px 5px;
+}
+
+.main-nutri {
+    margin: 0px;
+}
+
+.second-nutri {
+    margin: 0px;
+}
+
+.nutri-percentage {
+    margin: 0px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nutri-percentage > p {
+    margin: 1px 5px 2px 5px;
+    font-family: 'Helvetica Neue', sans-serif;
+}
+
+.inline-nutri {
+    display: flex;
+    justify-content: space-between;
+    margin: 0px;
+}
+
+.inline-nutri > p {
+    margin: 1px 5px 2px 20px;
+    font-family: 'Helvetica Neue', sans-serif;
+}

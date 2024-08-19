@@ -1,0 +1,95 @@
+#about-us-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+  
+#about-us-text{
+    text-align: left;
+    width: 60%;
+    margin-left: 15px;
+    margin-top: 1%;
+    height: 100%;
+}
+
+@media (prefers-color-scheme: dark) {
+    #about-us-text {
+        color: #EBE6EC;
+    }
+}
+
+#about-us-text > h3{
+    text-align: left;
+    color: rgb(0, 207, 14)
+}
+
+#about-us-text > h1{
+    text-align: left;
+    color: rgb(0, 207, 14)
+}
+
+.banner-section {
+    margin-top: 1%;
+    display: flex;
+    justify-content: center;
+}
+
+.banner-section > img {
+    align-self: center;
+    width: 60%;
+}
+
+#attribution-header {
+    margin-top: 20px;
+}
+
+.attribution-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.attribution-block > a {
+    color: rgb(255, 255, 255);
+    font-size: large;
+}
+
+@media screen and (max-width: 768px) {
+    #about-us-container{
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #about-us-text{
+        text-align: center;
+        margin: 0;
+    }
+
+    #about-us-text h3{
+        text-align: center;
+    }
+
+    #about-us-text h1{
+        text-align: center;
+    }
+
+    .attribution-block {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    #attribution-header {
+        margin-top: 0;
+    }
+
+    .banner-section {
+        margin-top: 0;
+    }
+
+    .banner-section > img {
+        display: none;
+    }
+}

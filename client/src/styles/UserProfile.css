@@ -1,0 +1,156 @@
+#user-profile-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 95vh;
+}
+
+#user-info-container, #custom-ingredients, #user-goals {
+  background-color: #e0e0e0;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 10px;
+}
+
+@media (prefers-color-scheme: dark) {
+  #user-profile-container {
+    background-color: #212224; 
+  }
+  
+  #user-info-container, #custom-ingredients, #user-goals {
+    color: #f0f0f0;
+    background-color: #636363;
+  }
+}
+
+#custom-ingredients, #user-goals {
+  height: fit-content;
+}
+
+#custom-ingredients {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#custom-ingredients h2 {
+  margin-bottom: 0;
+}
+
+#custom-foods-ul {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  width: 60%;
+}
+
+#custom-foods-ul li {
+  margin: 5px;
+}
+
+#user-info img {
+  min-width: 75%;
+}
+
+#user-info .functionality-btn{
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+#user-info-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 67%;
+  width: 30%
+}
+
+#user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#user-food-tabs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 40%;
+  width: 30%
+}
+
+#logout-btn {
+  background-color: #ff4040;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  color: white;
+  padding: 10px 40px 10px 40px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 600;
+  transition-duration: 0.4s;
+}
+
+#logout-btn:hover {
+  background-color: #ce1111;
+}
+
+.functionality-btn {
+  background-color: #daab2c;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  transition-duration: 0.4s;
+}
+
+.functionality-btn:hover {
+  background-color: #aa8214;
+}
+
+#not-login {
+  color: white;
+}
+
+@media screen and (max-width: 768px) {
+  #user-profile-container {
+    flex-direction: column;
+    height: auto;
+    width: auto;
+  }
+
+  #user-info-container, #custom-ingredients, #user-goals {
+    width: 100%;
+  }
+
+  #custom-foods-ul {
+    width: 100%;
+    padding: 0px;
+  }
+
+  #custom-foods-ul li {
+    margin-left: 40px;
+  }
+
+  #user-info img {
+    min-width: 75%;
+  }
+
+  #user-info-container, #user-food-tabs {
+    width: 80%;
+    min-height: auto;
+  }
+
+  #user-food-tabs {
+    align-items: center;
+  }
+}

@@ -1,0 +1,70 @@
+.navbar {
+    overflow: hidden;
+    display: flex;
+    background-color: #b39040;
+    justify-content: flex-end;
+}
+
+.navbar-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 13vw;
+}
+
+.app-logo:before {
+  content: "FoodBud";
+  align-items: center;
+  display: flex;
+  justify-content: left;
+  margin-left: 5px;
+  font-size: 30px;
+}
+
+#logo-link {
+  flex: 1;
+}
+
+.navbar-item > img {
+  margin: 0;
+  padding: 0;
+  width: 15%
+}
+
+.navbar * {
+  color: white;
+  padding: 5px;
+  margin: 0;
+  text-decoration: none;
+  font-size: 14px;
+  transition-duration: 0.4s;
+}
+
+.navbar *:hover {
+    background-color: #d3ab4c;
+}
+
+@media screen and (max-width: 768px) {
+  #logo-link {
+    display: none;
+  }
+
+  .navbar {
+      flex-direction: row;
+      align-items: flex-end;
+      align-content: space-evenly;
+      width: 100%;
+  }
+
+  .navbar-item {
+      max-width: none;
+  }
+
+  .navbar-item > img {
+      width: 20%;
+  }
+
+  .app-logo:before {
+    content: "";
+  }
+}
